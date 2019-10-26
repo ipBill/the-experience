@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "607882703841",
+    "firebase_url": "https://the-experience-c4c15.firebaseio.com",
+    "project_id": "the-experience-c4c15",
+    "storage_bucket": "the-experience-c4c15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607882703841:android:97c2fcf275c01ab32bd8a0",
+        "android_client_info": {
+          "package_name": "com.codelab.experience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607882703841-6g9boajd84hhabpa4c91qi3oj6eankrb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa4ZlpadIznNeQ4iEVFV_a_8gTLV13LlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607882703841-6g9boajd84hhabpa4c91qi3oj6eankrb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
