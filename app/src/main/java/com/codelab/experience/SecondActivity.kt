@@ -26,5 +26,6 @@ class SecondActivity : AppCompatActivity() {
 		exitButton.setOnClickListener {
 			finish()
 		}
+		progressView.progress = 75
 	}
 }

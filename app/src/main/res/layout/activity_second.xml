@@ -48,7 +48,18 @@
 
 	</LinearLayout>
 
+	<ProgressBar
+		android:id="@+id/progressView"
+		style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toTopOf="@id/actionView"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/foodImage" />
+
 	<LinearLayout
+		android:id="@+id/actionView"
 		android:layout_width="match_parent"
 		android:layout_height="48dp"
 		android:orientation="horizontal"
