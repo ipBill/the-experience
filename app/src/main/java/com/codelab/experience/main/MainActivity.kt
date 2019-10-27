@@ -1,9 +1,10 @@
 package com.codelab.experience.main
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.codelab.experience.R
+import com.codelab.experience.SecondActivity
 import com.codelab.experience.adapter.FoodAdapter
 import com.codelab.experience.data.Food
 import com.google.firebase.database.DataSnapshot
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
 		foodAdapter = FoodAdapter()
 		recyclerViewFood.adapter = foodAdapter
 		foodAdapter.onItemClick = { foodSelected: Food ->
-			Log.d(MainActivity::class.java.simpleName, foodSelected.toString())
+			val intent = Intent(this, SecondActivity::class.java)
+			intent.putExtra("FOOD", foodSelected)
+			startActivity(intent)
 		}
 	}
 
