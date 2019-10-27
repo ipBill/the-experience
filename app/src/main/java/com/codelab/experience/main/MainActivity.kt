@@ -1,10 +1,11 @@
 package com.codelab.experience.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.codelab.experience.data.Food
-import com.codelab.experience.adapter.FoodAdapter
 import com.codelab.experience.R
+import com.codelab.experience.adapter.FoodAdapter
+import com.codelab.experience.data.Food
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
 	private fun initRecyclerView() {
 		foodAdapter = FoodAdapter()
 		recyclerViewFood.adapter = foodAdapter
+		foodAdapter.onItemClick = { foodSelected: Food ->
+			Log.d(MainActivity::class.java.simpleName, foodSelected.toString())
+		}
 	}
 
 	private fun initFirebaseRealTimeDatabase() {
@@ -37,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 			}
 
 			override fun onDataChange(dataSnapshot: DataSnapshot) {
-				val foods = dataSnapshot.children.map { it.getValue(
-						Food::class.java) ?: Food()
+				val foods = dataSnapshot.children.map {
+					it.getValue(Food::class.java) ?: Food()
 				}
 				foodAdapter.updateFoods(foods = foods)
 			}

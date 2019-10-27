@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.item_food.view.*
 class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
 	private var foods: List<Food> = listOf()
+	var onItemClick: ((food: Food) -> Unit)? = null
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
 		val itemView = LayoutInflater.from(parent.context)
@@ -25,6 +26,9 @@ class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
 	override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
 		holder.bind(food = foods[position])
+		holder.itemView.setOnClickListener {
+			onItemClick?.invoke(foods[position])
+		}
 	}
 
 	fun updateFoods(foods: List<Food>) {
