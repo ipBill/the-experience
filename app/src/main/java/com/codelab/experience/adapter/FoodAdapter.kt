@@ -1,10 +1,12 @@
-package com.codelab.experience
+package com.codelab.experience.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.codelab.experience.R
+import com.codelab.experience.data.Food
 import kotlinx.android.synthetic.main.item_food.view.*
 
 class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {

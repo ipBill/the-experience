@@ -2,8 +2,8 @@ package com.codelab.experience.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.codelab.experience.Food
-import com.codelab.experience.FoodAdapter
+import com.codelab.experience.data.Food
+import com.codelab.experience.adapter.FoodAdapter
 import com.codelab.experience.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
 			}
 
 			override fun onDataChange(dataSnapshot: DataSnapshot) {
-				val foods = dataSnapshot.children.map { it.getValue(Food::class.java) ?: Food() }
+				val foods = dataSnapshot.children.map { it.getValue(
+						Food::class.java) ?: Food()
+				}
 				foodAdapter.updateFoods(foods = foods)
 			}
 		})
