@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_food.view.*
 
 class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
@@ -32,6 +33,9 @@ class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 	class FoodViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		fun bind(food: Food) {
 			itemView.tvFoodName.text = food.foodName
+			Glide.with(itemView.context)
+					.load(food.imageUrl)
+					.into(itemView.foodImage)
 		}
 	}
 }
