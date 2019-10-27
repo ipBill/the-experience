@@ -1,8 +1,10 @@
-package com.codelab.experience
+package com.codelab.experience.main
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.codelab.experience.Food
+import com.codelab.experience.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
