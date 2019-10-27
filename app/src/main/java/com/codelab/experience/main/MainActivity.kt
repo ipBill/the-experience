@@ -2,6 +2,7 @@ package com.codelab.experience.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.codelab.experience.R
 import com.codelab.experience.SecondActivity
@@ -48,6 +49,8 @@ class MainActivity : AppCompatActivity() {
 					it.getValue(Food::class.java) ?: Food()
 				}
 				foodAdapter.updateFoods(foods = foods)
+				recyclerViewFood.visibility = View.VISIBLE
+				progressView.visibility = View.GONE
 			}
 		})
 	}
