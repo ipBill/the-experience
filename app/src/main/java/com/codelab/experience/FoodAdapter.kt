@@ -33,6 +33,7 @@ class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 	class FoodViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		fun bind(food: Food) {
 			itemView.tvFoodName.text = food.foodName
+			itemView.tvCalories.text = food.calories.toString()
 			Glide.with(itemView.context)
 					.load(food.imageUrl)
 					.into(itemView.foodImage)
