@@ -1,5 +1,6 @@
 package com.codelab.experience
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -14,6 +15,7 @@ class SecondActivity : AppCompatActivity() {
 		initView()
 	}
 
+	@SuppressLint("SetTextI18n")
 	private fun initView() {
 		val food = intent?.getParcelableExtra("FOOD") ?: Food()
 		Glide.with(this)
@@ -21,7 +23,7 @@ class SecondActivity : AppCompatActivity() {
 				.into(foodImage)
 
 		tvFoodName.text = food.foodName
-		tvCalories.text = food.calories.toString()
+		tvCalories.text = food.calories.toString() + " " + getString(R.string.calories)
 
 		exitButton.setOnClickListener {
 			finish()
