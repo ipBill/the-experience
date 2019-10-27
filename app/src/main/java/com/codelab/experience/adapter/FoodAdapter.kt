@@ -1,5 +1,6 @@
 package com.codelab.experience.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +38,11 @@ class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 	}
 
 	class FoodViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
+		@SuppressLint("SetTextI18n")
 		fun bind(food: Food) {
 			itemView.tvFoodName.text = food.foodName
-			itemView.tvCalories.text = food.calories.toString()
+			itemView.tvCalories.text = "${food.calories} ${itemView.context.getString(
+					R.string.calories)}"
 			Glide.with(itemView.context)
 					.load(food.imageUrl)
 					.into(itemView.foodImage)

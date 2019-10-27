@@ -4,4 +4,5 @@
 	<string name="splash_title">Welcome to Android Application Development</string>
 	<string name="splash_detail">Please enter get start for open application</string>
 	<string name="button_get_start">GET START</string>
+	<string name="calories">แคลอรี่</string>
 </resources>
