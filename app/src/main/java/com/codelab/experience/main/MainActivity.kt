@@ -15,7 +15,10 @@ class MainActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
+		initFirebaseRealTimeDatabase()
+	}
 
+	private fun initFirebaseRealTimeDatabase() {
 		val database = FirebaseDatabase.getInstance()
 		val foodsReference = database.getReference("foods")
 		foodsReference.addListenerForSingleValueEvent(object : ValueEventListener {
