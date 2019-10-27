@@ -5,4 +5,7 @@
 	<string name="splash_detail">Please enter get start for open application</string>
 	<string name="button_get_start">GET START</string>
 	<string name="calories">แคลอรี่</string>
+	<string name="info_cal">จำนวนแคลอรี่ที่ต้องการทั้งหมดต่อวัน 3,000</string>
+	<string name="button_exit">EXIT</string>
+	<string name="button_calculate">CALCULATE</string>
 </resources>

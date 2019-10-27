@@ -28,6 +28,16 @@ class SecondActivity : AppCompatActivity() {
 		exitButton.setOnClickListener {
 			finish()
 		}
-		progressView.progress = 75
+		val percentCalories = calculateCalories(food.calories)
+		progressView.progress = percentCalories
+		if (percentCalories <= 100) {
+			percentText.text = "$percentCalories%"
+		} else {
+			percentText.text = "100%"
+		}
+	}
+
+	private fun calculateCalories(foodCalories: Int): Int {
+		return (foodCalories * 100) / 3000
 	}
 }

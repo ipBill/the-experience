@@ -48,15 +48,44 @@
 
 	</LinearLayout>
 
+	<TextView
+		android:id="@+id/infoText"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:gravity="center"
+		android:padding="16dp"
+		android:text="@string/info_cal"
+		android:textColor="@android:color/black"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/foodImage" />
+
 	<ProgressBar
 		android:id="@+id/progressView"
 		style="@style/Widget.AppCompat.ProgressBar.Horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:layout_constraintBottom_toTopOf="@id/actionView"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/foodImage" />
+		app:layout_constraintTop_toBottomOf="@id/infoText" />
+
+	<TextView
+		android:id="@+id/percentText"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:gravity="center"
+		android:padding="16dp"
+		android:textColor="@android:color/black"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/progressView"
+		tools:text="100%" />
 
 	<LinearLayout
 		android:id="@+id/actionView"
@@ -72,14 +101,14 @@
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
-			android:text="EXIT" />
+			android:text="@string/button_exit" />
 
 		<Button
-			android:id="@+id/confirmButton"
+			android:id="@+id/calculateButton"
 			android:layout_width="0dp"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
-			android:text="CONFIRM" />
+			android:text="@string/button_calculate" />
 	</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
