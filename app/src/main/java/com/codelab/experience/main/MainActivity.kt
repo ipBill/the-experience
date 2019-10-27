@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 	}
 
 	private fun initFirebaseRealTimeDatabase() {
-		val database = FirebaseDatabase.getInstance()
+		val database = FirebaseDatabase.getInstance("https://the-experience-c4c15.firebaseio.com/")
 		val foodsReference = database.getReference("foods")
 		foodsReference.addListenerForSingleValueEvent(object : ValueEventListener {
 			override fun onCancelled(exception: DatabaseError) {
