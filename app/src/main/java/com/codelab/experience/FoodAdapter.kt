@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_food.view.*
 
-class FoodAdapter constructor(private val foods: List<Food>) :
-		RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+class FoodAdapter : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
+
+	private var foods: List<Food> = listOf()
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
 		val itemView = LayoutInflater.from(parent.context)
@@ -21,6 +22,11 @@ class FoodAdapter constructor(private val foods: List<Food>) :
 
 	override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
 		holder.bind(food = foods[position])
+	}
+
+	fun updateFoods(foods: List<Food>) {
+		this.foods = foods
+		notifyDataSetChanged()
 	}
 
 	class FoodViewHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
