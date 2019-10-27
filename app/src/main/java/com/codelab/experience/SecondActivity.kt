@@ -11,9 +11,20 @@ class SecondActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_second)
+		initView()
+	}
+
+	private fun initView() {
 		val food = intent?.getParcelableExtra("FOOD") ?: Food()
 		Glide.with(this)
 				.load(food.imageUrl)
 				.into(foodImage)
+
+		tvFoodName.text = food.foodName
+		tvCalories.text = food.calories.toString()
+
+		exitButton.setOnClickListener {
+			finish()
+		}
 	}
 }
